@@ -1,5 +1,6 @@
 from .base import * 
 
+
 ALLOWED_HOSTS = ["django-project-miguelmargar.c9users.io"]
 
 # Database
