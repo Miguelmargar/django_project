@@ -9,7 +9,11 @@
 <p>Location: {{ product.location }}</p>
 <p>Price: {{ product.price }}</p>
 <p>Turnover: {{ product.turnover }}</p>
-
+<form method="POST" action="{% url 'add_to_shortlist' %}">
+    {% csrf_token %}
+    <input type="hidden" name="product_id" value="{{ product.id }}" />
+    <input type="submit" value="Add to Shortlist" class="btn btn-success"/>
+</form>
 {% endfor %}
 
 

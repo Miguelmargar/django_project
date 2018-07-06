@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>These are your products</h3>
+{% if shortlist|length > 0 %}
+<div class="container">
+    <div class="row">
+        {% for s in shortlist %}
+        <div class="col-sm-6">
+            <h5><span class="boldtext">Product Name:</span> {{ s.product.name }} </h5>
+            <p><span class="boldtext">Product description:</span> {{ s.product.description }} </p>
+            <img src="{{MEDIA_URL}}{{p.product.image}}">
+            <p><span class="boldtext">Product price:</span> {{ s.product.price }} </p>
+            <p><span class="boldtext">Product brand:</span> {{ s.product.brand }} </p>
+            <p><span class="boldtext">Amount in Cart:</span> {{ s.quantity }} </p>
+            <p><span class="boldtext">Sub Total:</span> {{ s.sub_total }} </p>
+            <form method="POST" action="{% url 'remove_from_shortlist' %}">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ s.product.id }}" />
+                <input type="submit" value="Remove" class="btn btn-success" />
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<br>
+<div>
+<h3>Grand Total: {{ cart_total }} </h3>
+
+{% endif %}
+{% endblock content %}
+

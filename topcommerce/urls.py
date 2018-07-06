@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from products import urls as products_urls
 from accounts import urls as accounts_urls
+from shortlist import urls as shortlist_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(products_urls)),
     path('accounts/', include(accounts_urls)),
+    path('shortlist/', include(shortlist_urls)),
 ]

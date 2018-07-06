@@ -30,13 +30,13 @@
                     <ul class="nav navbar-nav">
                         {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}">Profile</a></li>
-                        <li><a href="#">Short List</a></li>
+                        <li><a href="{% url 'view_shortlist' %}">Short List</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                         {% else %}
                         <li><a href="{% url 'register_buyer' %}">Register as Buyer</a></li>
                         <li><a href="{% url 'register_seller' %}">Register as Seller</a></li>
                         <li><a href="{% url 'login' %}">Login</a></li>
-                        <li><a href="#">Short List</a></li>
+                        <li><a href="{% url 'view_shortlist' %}">Short List</a></li>
                         {% endif %}
                     </ul>
                     <form class="navbar-form navbar-right">
