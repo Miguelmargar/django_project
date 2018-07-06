@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for product in products %}
+<h3>Company Name: {{ product.name }}</h3>
+<img src="{{MEDIA_URL}}{{product.image}}" />
+<p>Brand: {{ product.brand }}</p>
+<p>Location: {{ product.location }}</p>
+<p>Price: {{ product.price }}</p>
+<p>Turnover: {{ product.turnover }}</p>
+
+{% endfor %}
+
+
+{% endblock content %}
