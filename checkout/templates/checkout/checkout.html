@@ -1,0 +1,70 @@
+{% extends 'base.html' %} 
+{% load static from staticfiles %} 
+{% load bootstrap_tags %} 
+
+
+{% block head_js %}
+    {{ block.super }}
+<script src="https://js.stripe.com/v2/" type="text/javascript"></script>
+  <script type="text/javascript">
+      //<![CDATA[
+      Stripe.publishableKey = '{{ publishable }}';
+      //]]>
+  </script>
+  <script type="text/javascript" src="{% static 'checkout/stripe.js' %}"></script>
+{% endblock head_js %}
+
+
+{% block content %}
+
+<h3>These are your products</h3>
+
+<div class="container">
+    <div class="row">
+        {% for p in shortlist %}
+        <div class="col-sm-6">
+            <h5><span class="boldtext">Product Name:</span> {{ p.product.name }} </h5>
+            <p><span class="boldtext">Product description:</span> {{ p.product.description }} </p>
+            <img src="{{MEDIA_URL}}{{p.product.image}}">
+            <p><span class="boldtext">Product price:</span> {{ p.product.price }} </p>
+            <p><span class="boldtext">Product brand:</span> {{ p.product.brand }} </p>
+            <p><span class="boldtext">Total Product:</span> {{ p.sub_total }} </p>
+            <form method="POST" action="{% url 'remove_from_shortlist' %}">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ p.product.id }}" />
+                <input type="submit" value="Remove" class="btn btn-success" />
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<br>
+<div>
+    <h3>Grand Total: €{{ shortlist_total }} </h3>
+
+
+    <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+
+        <legend>Payment Details</legend>
+
+        <div id="credit-card-errors" style="display:none">
+            <div class="alert-message block-message error" id="stripe-error-message"></div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    {{ order_form }}
+                </div>
+                <div class="form-group col-md-6">
+                    {{ payment_form }}
+                </div>
+            </div>
+        </div>
+        {% csrf_token %}
+        <div class="form-group col-md-12">
+            <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+        </div>
+
+    </form>
+    
+    {% endblock content %}
