@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Profile</h3>
+
+<p>Username: {{ user.username }}</p>
+<p>EMail: {{ user.email }}</p>
+
+{% if user.buyer %}
+<p>You are a buyer</p>
+{% endif %}
+{% if user.seller %}
+<p>You are a seller</p>
+{% endif %}
+
+{% endblock content %}
