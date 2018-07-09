@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_forms_bootstrap',
     'products',
     'storages',
     'accounts',
@@ -112,5 +113,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+STRIPE_PUBLISHABLE = os.environ.get("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET = os.environ.get("STRIPE_SECRET_KEY")
 
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SYSTEM_EMAIL = 'development@ecommerce.com'

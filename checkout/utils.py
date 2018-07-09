@@ -9,7 +9,7 @@ from django.core.mail import send_mail
 stripe.api_key = settings.STRIPE_SECRET
 
 def save_order_items(order, shortlist):
-    for id, quantity in short.items():
+    for id, quantity in shortlist.items():
         product = get_object_or_404(Product, pk=id)
         order_line_item = OrderLineItem(
             order = order,

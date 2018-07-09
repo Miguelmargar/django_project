@@ -4,14 +4,15 @@ from django.db.models import Avg
 # Create your models here.
 
 class Product(models.Model):
+    collection = models.CharField(max_length=25, default='')
     name = models.CharField(max_length=25, default='')
     description = models.TextField()
-    location = models.CharField(max_length=25, default='')
+    case = models.CharField(max_length=25, default='')
     price = models.DecimalField(max_digits=15, decimal_places=2)
-    turnover = models.DecimalField(max_digits=15, decimal_places=2, default='0')
-    net_profit = models.DecimalField(max_digits=15, decimal_places=2, default='0')
+    glass = models.CharField(max_length=25, default='')
+    functions = models.CharField(max_length=25, default='')
     image = models.ImageField(upload_to='images')
-    brand = models.CharField(max_length=50, default='')
+    strap = models.CharField(max_length=25, default='')
     
     def __str__(self):
         return self.name

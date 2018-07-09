@@ -3,12 +3,14 @@
 {% block content %}
 
 {% for product in products %}
-<h3>Company Name: {{ product.name }}</h3>
+<h3>Collection: {{ product.collection }}</h3>
 <img src="{{MEDIA_URL}}{{product.image}}" />
-<p>Brand: {{ product.brand }}</p>
-<p>Location: {{ product.location }}</p>
+<p>{{ product.description }}</p>
+<p>Case: {{ product.case }}</p>
+<p>Glass: {{ product.glass }}</p>
+<p>Functions: {{ product.functions }}</p>
+<p>Strap: {{ product.strap }}</p>
 <p>Price: {{ product.price }}</p>
-<p>Turnover: {{ product.turnover }}</p>
 <form method="POST" action="{% url 'add_to_shortlist' %}">
     {% csrf_token %}
     <input type="hidden" name="product_id" value="{{ product.id }}" />
