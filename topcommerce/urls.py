@@ -20,6 +20,7 @@ from accounts import urls as accounts_urls
 from shortlist import urls as shortlist_urls
 from checkout import urls as checkout_urls
 from django.views.static import serve
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
