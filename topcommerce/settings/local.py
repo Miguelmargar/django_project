@@ -1,5 +1,7 @@
 from .base import * 
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = "98ap(=2rzfww%yw&*&^l!h!o1noc&omvlnu(&yf=jf=2rvf%@c"
 
 ALLOWED_HOSTS = ["django-project-miguelmargar.c9users.io"]
 
