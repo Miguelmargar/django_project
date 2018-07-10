@@ -4,9 +4,8 @@ from django.contrib.auth.models import User
 
 class Buyer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="buyer")
-    numbervalue = models.IntegerField(default=0, null="False")
-    stringvalue = models.CharField(max_length=25, default="unknown", null=False, blank=False)    
-    
+    city = models.CharField(max_length=35, default='Dublin')
+    country = models.CharField(max_length=35, default='Ireland')
 
     def __str__(self):
         return self.user.username

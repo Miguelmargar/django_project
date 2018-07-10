@@ -41,7 +41,7 @@ class UserRegistrationForm(UserCreationForm):
 class BuyerRegistrationForm(forms.ModelForm):
     class Meta:
         model=Buyer
-        fields=["numbervalue", "stringvalue"]
+        fields=["city", "country"]
         
 class SellerRegistrationForm(forms.ModelForm):
     class Meta:

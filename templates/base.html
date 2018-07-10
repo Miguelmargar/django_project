@@ -43,11 +43,11 @@
                         <li><a href="{% url 'view_shortlist' %}">Short List</a></li>
                         {% endif %}
                     </ul>
-                    <form class="navbar-form navbar-right">
+                    <form class="navbar-form navbar-right" method="GET" action="{% url 'get_products' %}">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" class="form-control" placeholder="Search" name="search">
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default">Search</button>
                     </form>
                 </div>
                 <!-- /.navbar-collapse -->
