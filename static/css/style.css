@@ -47,4 +47,66 @@ main {
     background-size: 100vw 550px;
     height: 550px;
     position: relative;
+    z-index: -1;
 }
+
+.insidephoto1 {
+    position: absolute;
+    left: 12%;
+    top: 20%;
+    font-size: 40px;
+    width: 180px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.insidephoto2 {
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    font-size: 40px;
+    width: 180px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+#mainphoto2 {
+    background-image: url("../images/rol.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 650px;
+    height: 650px;
+    position: relative;
+    z-index: -1;
+}
+
+.insidephoto3 {
+    position: absolute;
+    left: 25%;
+    top: 20%;
+    font-size: 40px;
+    width: 180px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.insidephoto4 {
+    position: absolute;
+    left: 57%;
+    top: 10%;
+    font-size: 40px;
+    width: 180px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.insidephoto5 {
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    font-size: 40px;
+    width: 180px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+/*Footer section------------------------------*/
