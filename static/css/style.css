@@ -34,3 +34,17 @@ body {
     position: fixed;
     top: 0;
 }
+
+/*Main section--------------------------------*/
+
+main {
+    margin-top: 108px;
+}
+
+#mainphoto1 {
+    background-image: url("../images/suit.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 550px;
+    height: 550px;
+    position: relative;
+}
