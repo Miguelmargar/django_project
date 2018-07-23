@@ -11,6 +11,7 @@ body {
     position: fixed;
     top: 36px;
     width: 100%;
+    z-index: 1;
 }
 
 .navbar-brand {
@@ -33,6 +34,7 @@ body {
     padding-top: 5px;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 /*Main section--------------------------------*/
@@ -143,4 +145,31 @@ a:active, a:link, a:visited, a:hover {
 
 .luca {
     font-size: 25px;
+}
+
+/*Watches-----------------------------------------*/
+
+.watch_h1 {
+    font-size: 40px;
+    padding: 30px;
+}
+
+.watch_cont {
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.watch_img {
+    width: 265px;
+    height: 424px;
+}
+
+.button {
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding: 3px;
+    width: 100%;
 }
