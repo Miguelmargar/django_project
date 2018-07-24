@@ -178,3 +178,8 @@ a:active, a:link, a:visited, a:hover {
 .details {
     height: 275px;
 }
+
+no_padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
