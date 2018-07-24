@@ -1,35 +1,59 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
-<h3>These are your products</h3>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="watch_h1">These are your products</h1>
+        </div>
+    </div>
+</div>
+
 {% if shortlist|length > 0 %}
-<div class="container">
+<div class="container watch_cont">
     <div class="row">
         {% for s in shortlist %}
-        <div class="col-sm-6">
-            <h5><span class="boldtext">Product Name:</span> {{ s.product.name }} </h5>
-            <p><span class="boldtext">Product description:</span> {{ s.product.description }} </p>
-            <img src="{{MEDIA_URL}}{{p.product.image}}">
-            <p><span class="boldtext">Product price:</span> {{ s.product.price }} </p>
-            <p><span class="boldtext">Product brand:</span> {{ s.product.brand }} </p>
-            <p><span class="boldtext">Amount in Cart:</span> {{ s.quantity }} </p>
-            <p><span class="boldtext">Sub Total:</span> {{ s.sub_total }} </p>
+        <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+            <img class="watch_img" src="{{MEDIA_URL}}{{s.product.image}}" />
+            <div class="details">
+                <h2>Collection: {{ s.product.collection }}</h2>
+                <p>{{ s.product.name }}</p>
+                <p>Case: {{ s.product.case }}</p>
+                <p>Glass: {{ s.product.glass }}</p>
+                <p>Functions: {{ s.product.functions }}</p>
+                <p>Strap: {{ s.product.strap }}</p>
+                <h3>€{{ s.product.price }}</h3>
+            </div>
             <form method="POST" action="{% url 'remove_from_shortlist' %}">
                 {% csrf_token %}
                 <input type="hidden" name="product_id" value="{{ s.product.id }}" />
-                <input type="submit" value="Remove" class="btn btn-success" />
+                <input type="submit" value="Remove" class="button" />
             </form>
         </div>
         {% endfor %}
     </div>
 </div>
-<br>
-<div>
-<h3>Grand Total: {{ shortlist_total }} </h3>
-<a href="{% url 'checkout' %}" class="btn btn-success" role="button">Checkout</a>
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="watch_h1">Grand Total: {{ shortlist_total }} </h1>
+        </div>
+    </div>
+</div>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="{% url 'checkout' %}" class="button" role="button">Checkout</a>
+        </div>
+    </div>
 </div>
 {% else %}
-    Your cart is empty
-{% endif %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="watch_h1">Your cart is empty, proceed back to our main page to see our fantastic range of Swiss made watches</h1>
+        </div>
+    </div>
+</div>
+{% endif %} 
 {% endblock content %}
-
