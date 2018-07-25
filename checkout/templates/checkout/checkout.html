@@ -47,31 +47,82 @@
         {% endfor %}
     </div>
 </div>
-<br>
-<div>
-    <h3>Grand Total: €{{ shortlist_total }} </h3>
 
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="watch_h1">Grand Total: €{{ shortlist_total }} </h1>
+        </div>
+    </div>
+</div>
+
+<!--Payment forms ------------------------------------------>
 
     <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
 
-        <legend>Payment Details</legend>
+        <legend><h2>Payment Details</h2></legend>
 
         <div id="credit-card-errors" style="display:none">
             <div class="alert-message block-message error" id="stripe-error-message"></div>
         </div>
-        <div class="col">
-            <div class="row">
+        
+        <div class="container">
+            <div class="row text-center">
                 <div class="form-group col-md-6">
-                    {{ order_form }}
+                    {{ order_form.non_field_errors }}
+                    
+                    <div class="fieldWrapper">
+                        {{ order_form.full_name.errors }}
+                        <label for="{{ order_form.full_name.id_for_label }}">Full Name:</label>
+                        {{ order_form.full_name }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ order_form.phone_number.errors }}
+                        <label for="{{ order_form.phone_number.id_for_label }}">Phone Number:</label>
+                        {{ order_form.phone_number }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ order_form.country.errors }}
+                        <label for="{{ order_form.country.id_for_label }}">Country:</label>
+                        {{ order_form.country }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ order_form.postcode.errors }}
+                        <label for="{{ order_form.postcode.id_for_label }}">Postcode:</label>
+                        {{ order_form.postcode }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ order_form.town_or_city.errors }}
+                        <label for="{{ order_form.town_or_city.id_for_label }}">Town or City:</label>
+                        {{ order_form.town_or_city }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ order_form.street_address_1.errors }}
+                        <label for="{{ order_form.street_address_1.id_for_label }}">Street Address 1:</label>
+                        {{ order_form.street_address_1 }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ order_form.street_address_2.errors }}
+                        <label for="{{ order_form.street_address_2.id_for_label }}">Street Address 2:</label>
+                        {{ order_form.street_address_2 }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ order_form.county.errors }}
+                        <label for="{{ order_form.county.id_for_label }}">County:</label>
+                        {{ order_form.county }}
+                    </div>
+                    
+                    
+                    
                 </div>
                 <div class="form-group col-md-6">
-                    {{ payment_form }}
+                    {{ payment_form.as_p }}
                 </div>
             </div>
         </div>
         {% csrf_token %}
         <div class="form-group col-md-12">
-            <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+            <input class="button" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
         </div>
 
     </form>
