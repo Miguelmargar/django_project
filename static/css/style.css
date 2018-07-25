@@ -181,7 +181,7 @@ a:active, a:link, a:visited, a:hover {
 
 .fieldWrapper {
     font-size: 17px;
-    padding-bottom: 5px;
+    padding-bottom: 7px;
 }
 
 .pay_button {
@@ -191,4 +191,10 @@ a:active, a:link, a:visited, a:hover {
     font-size: 25px;
     padding: 5px;
     width: 100%;
+}
+
+#paddingpaybutton {
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
 }
