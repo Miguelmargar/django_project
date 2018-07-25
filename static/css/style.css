@@ -180,5 +180,15 @@ a:active, a:link, a:visited, a:hover {
 }
 
 .fieldWrapper {
+    font-size: 17px;
+    padding-bottom: 5px;
+}
 
+.pay_button {
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 25px;
+    padding: 5px;
+    width: 100%;
 }

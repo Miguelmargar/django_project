@@ -1,18 +1,16 @@
 {% extends 'base.html' %} 
 {% load static from staticfiles %} 
 {% load bootstrap_tags %} 
-
-{% block head_js %}
-    {{ block.super }}
+{% block head_js %} 
+{{ block.super }}
 <script src="https://js.stripe.com/v2/" type="text/javascript"></script>
-  <script type="text/javascript">
-      //<![CDATA[
-      Stripe.publishableKey = '{{ publishable }}';
-      //]]>
-  </script>
-  <script type="text/javascript" src="{% static 'checkout/stripe.js' %}"></script>
-{% endblock head_js %}
-
+<script type="text/javascript">
+    //<![CDATA[
+    Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+</script>
+<script type="text/javascript" src="{% static 'checkout/stripe.js' %}"></script>
+{% endblock head_js %} 
 
 {% block content %}
 
@@ -58,73 +56,87 @@
 
 <!--Payment forms ------------------------------------------>
 
-    <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-
-        <legend><h2>Payment Details</h2></legend>
-
-        <div id="credit-card-errors" style="display:none">
-            <div class="alert-message block-message error" id="stripe-error-message"></div>
+<form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+    <div class="container">
+        <div class="row">
+            <legend>
+                <h2>Payment Details</h2>
+            </legend>
         </div>
-        
-        <div class="container">
-            <div class="row text-center">
-                <div class="form-group col-md-6">
-                    {{ order_form.non_field_errors }}
-                    
-                    <div class="fieldWrapper">
-                        {{ order_form.full_name.errors }}
-                        <label for="{{ order_form.full_name.id_for_label }}">Full Name:</label>
-                        {{ order_form.full_name }}
-                    </div>
-                    <div class="fieldWrapper">
-                        {{ order_form.phone_number.errors }}
-                        <label for="{{ order_form.phone_number.id_for_label }}">Phone Number:</label>
-                        {{ order_form.phone_number }}
-                    </div>
-                    <div class="fieldWrapper">
-                        {{ order_form.country.errors }}
-                        <label for="{{ order_form.country.id_for_label }}">Country:</label>
-                        {{ order_form.country }}
-                    </div>
-                    <div class="fieldWrapper">
-                        {{ order_form.postcode.errors }}
-                        <label for="{{ order_form.postcode.id_for_label }}">Postcode:</label>
-                        {{ order_form.postcode }}
-                    </div>
-                    <div class="fieldWrapper">
-                        {{ order_form.town_or_city.errors }}
-                        <label for="{{ order_form.town_or_city.id_for_label }}">Town or City:</label>
-                        {{ order_form.town_or_city }}
-                    </div>
-                    <div class="fieldWrapper">
-                        {{ order_form.street_address_1.errors }}
-                        <label for="{{ order_form.street_address_1.id_for_label }}">Street Address 1:</label>
-                        {{ order_form.street_address_1 }}
-                    </div>
-                    <div class="fieldWrapper">
-                        {{ order_form.street_address_2.errors }}
-                        <label for="{{ order_form.street_address_2.id_for_label }}">Street Address 2:</label>
-                        {{ order_form.street_address_2 }}
-                    </div>
-                    <div class="fieldWrapper">
-                        {{ order_form.county.errors }}
-                        <label for="{{ order_form.county.id_for_label }}">County:</label>
-                        {{ order_form.county }}
-                    </div>
-                    
-                    
-                    
+    </div>
+
+    <div id="credit-card-errors" style="display:none">
+        <div class="alert-message block-message error" id="stripe-error-message"></div>
+    </div>
+
+    <div class="container">
+        <div class="row text-center">
+            <div class="form-group col-md-6">
+                {{ order_form.non_field_errors }}
+                <div class="fieldWrapper">
+                    {{ order_form.full_name.errors }}
+                    <label for="{{ order_form.full_name.id_for_label }}">Full Name:</label> {{ order_form.full_name }}
                 </div>
-                <div class="form-group col-md-6">
-                    {{ payment_form.as_p }}
+                <div class="fieldWrapper">
+                    {{ order_form.phone_number.errors }}
+                    <label for="{{ order_form.phone_number.id_for_label }}">Phone Number:</label> {{ order_form.phone_number }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ order_form.country.errors }}
+                    <label for="{{ order_form.country.id_for_label }}">Country:</label> {{ order_form.country }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ order_form.postcode.errors }}
+                    <label for="{{ order_form.postcode.id_for_label }}">Postcode:</label> {{ order_form.postcode }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ order_form.town_or_city.errors }}
+                    <label for="{{ order_form.town_or_city.id_for_label }}">Town or City:</label> {{ order_form.town_or_city }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ order_form.street_address_1.errors }}
+                    <label for="{{ order_form.street_address_1.id_for_label }}">Street Address 1:</label> {{ order_form.street_address_1 }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ order_form.street_address_2.errors }}
+                    <label for="{{ order_form.street_address_2.id_for_label }}">Street Address 2:</label> {{ order_form.street_address_2 }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ order_form.county.errors }}
+                    <label for="{{ order_form.county.id_for_label }}">County:</label> {{ order_form.county }}
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                {{ payment_form.non_field_errors }}
+                <div class="fieldWrapper">
+                    {{ payment_form.credit_card_number.errors }}
+                    <label for="{{ payment_form.credit_card_number.id_for_label }}">Credit Card Number:</label> {{ payment_form.credit_card_number }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ payment_form.cvv.errors }}
+                    <label for="{{ payment_form.cvv.id_for_label }}">CVV Number:</label> {{ payment_form.cvv }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ payment_form.expiry_month.errors }}
+                    <label for="{{ payment_form.expiry_month.id_for_label }}">Expiry Month:</label> {{ payment_form.expiry_month }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ payment_form.expiry_year.errors }}
+                    <label for="{{ payment_form.expiry_year.id_for_label }}">Expiry Year:</label> {{ payment_form.expiry_year }}
                 </div>
             </div>
         </div>
-        {% csrf_token %}
-        <div class="form-group col-md-12">
-            <input class="button" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+    </div>
+    {% csrf_token %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <input class="pay_button" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+            </div>
         </div>
+    </div>
 
-    </form>
-    
-    {% endblock content %}
+</form>
+
+{% endblock content %}
