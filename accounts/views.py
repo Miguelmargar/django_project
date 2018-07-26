@@ -23,7 +23,7 @@ def login(request):
                 redirect_to = next = request.GET.get("next", "/")
                 return redirect(redirect_to)
             else:
-                login_form.add_error(None, "Your username or password are incorrect")
+                login_form.add_error(None, "Your username or password is incorrect")
     else:
         login_form = UserLoginForm()
 

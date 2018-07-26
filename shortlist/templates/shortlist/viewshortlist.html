@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 
 <div class="container text-center">
     <div class="row">
@@ -43,7 +44,9 @@
 <div class="container text-center">
     <div class="row">
         <div class="col-sm-12 no_padding">
-            <a href="{% url 'checkout' %}" role="button"><p class="button">Proceed to Checkout</p></a>
+            <a href="{% url 'checkout' %}" role="button">
+                <p class="button">Proceed to Checkout</p>
+            </a>
         </div>
     </div>
 </div>
@@ -51,9 +54,17 @@
 <div class="container text-center">
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="watch_h1">Your cart is empty, proceed back to our main page to see our fantastic range of Swiss made watches</h1>
+            <h1 class="watch_h1">You have not selected any watches, proceed back to our main page to see our fantastic range of Swiss made time pieces</h1>
         </div>
     </div>
 </div>
+<div class="container text-center backhome">
+    <div class="row">
+        <div class="col-sm-12">
+            <a  href="{% url 'get_products' %}" style="color:black">Luca D'Ettore</a>
+        </div>
+    </div>
+</div>
+
 {% endif %} 
 {% endblock content %}
