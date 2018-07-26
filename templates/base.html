@@ -40,8 +40,7 @@
                         <li><a href="{% url 'logout' %}" class="navoptions">Logout</a></li>
                         <li><a href="{% url 'view_shortlist' %}" class="navoptions">Short List</a></li>
                         {% else %}
-                        <li><a href="{% url 'register_buyer' %}" class="navoptions">Register as Buyer</a></li>
-                        <li><a href="{% url 'register_seller' %}" class="navoptions">Register as Seller</a></li>
+                        <li><a href="{% url 'register_buyer' %}" class="navoptions">Register</a></li>
                         <li><a href="{% url 'login' %}" class="navoptions">Login</a></li>
                         <li><a href="{% url 'view_shortlist' %}" class="navoptions">Short List</a></li>
                         {% endif %}
