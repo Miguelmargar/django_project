@@ -179,12 +179,14 @@ a:active, a:link, a:visited, a:hover {
     height: 275px;
 }
 
+/*Order and Payment forms------------------------------------*/
+
 .fieldWrapper {
     font-size: 17px;
     padding-bottom: 7px;
 }
 
-#paddingpaybutton {
+.paddingpaybutton {
     margin-top: 10px;
     margin-bottom: 50px;
     padding-left: 0;
@@ -201,3 +203,23 @@ a:active, a:link, a:visited, a:hover {
     width: 100%;
 }
 
+/*login form-------------------------------------*/
+
+.loginh1 {
+    margin-top: 20px;
+}
+
+.login_button {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border: none;
+    font-size: 25px;
+    padding: 5px;
+    width: 37%;
+}
+
+.loginWrapper {
+    font-size: 20px;
+    padding-bottom: 7px;
+}
