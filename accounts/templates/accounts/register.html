@@ -1,13 +1,54 @@
-{% extends "base.html" %}
-
+{% extends "base.html" %} 
 {% block content %}
 
-<h3>register</h3>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ user_form.as_p }}
-        {{ user_type_form.as_p }}
-        <input type="submit" value="Register">
-    </form>
+<div class="container text-center loginh1">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Register with us below:</h1>
+        </div>
+    </div>
+</div>
 
+<div class="container text-center paddingpaybutton">
+    <div class="row">
+        <div class="col-sm-12 text-center loginWrapper">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %} 
+                {{ user_form.non_field_errors }}
+                <div class="loginWrapper">
+                    {{ user_form.username.errors }}
+                    <label for="{{ user_form.username.id_for_label }}">User Name:</label>
+                    <p>{{ user_form.username }}</p>
+                </div>
+                <div class="loginWrapper">
+                    {{ user_form.email.errors }}
+                    <label for="{{ user_form.email.id_for_label }}">Email:</label>
+                    <p>{{ user_form.email }}</p>
+                </div>
+                <div class="loginWrapper">
+                    {{ user_form.password1.errors }}
+                    <label for="{{ user_form.password1.id_for_label }}">Password:</label>
+                    <p>{{ user_form.password1 }}</p>
+                </div>
+                <div class="loginWrapper">
+                    {{ user_form.password2.errors }}
+                    <label for="{{ user_form.password2.id_for_label }}">Password Confirmation:</label>
+                    <p>{{ user_form.password2 }}</p>
+                </div>
+                {{ user_type_form.non_field_errors }}
+                <div class="loginWrapper">
+                    {{ user_type_form.city.errors }}
+                    <label for="{{ user_type_form.city.id_for_label }}">City:</label>
+                    <p>{{ user_type_form.city }}</p>
+                </div>
+                <div class="loginWrapper">
+                    {{ user_type_form.country.errors }}
+                    <label for="{{ user_type_form.country.id_for_label }}">Country:</label>
+                    <p>{{ user_type_form.country }}</p>
+                </div>
+                <input type="submit" value="Register" class="login_button">
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}
