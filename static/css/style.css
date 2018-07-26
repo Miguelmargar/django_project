@@ -184,17 +184,20 @@ a:active, a:link, a:visited, a:hover {
     padding-bottom: 7px;
 }
 
+#paddingpaybutton {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .pay_button {
     color: white;
     background-color: black;
+    border-radius: 5px;
     border: none;
     font-size: 25px;
     padding: 5px;
     width: 100%;
 }
 
-#paddingpaybutton {
-    margin-top: 10px;
-    padding-left: 0;
-    padding-right: 0;
-}
