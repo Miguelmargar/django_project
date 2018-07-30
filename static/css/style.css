@@ -43,14 +43,28 @@ main {
     margin-top: 108px;
 }
 
-#mainphoto1 {
-    background-image: url("../images/suit.jpg");
-    background-repeat: no-repeat;
-    background-size: 100vw 550px;
+#carousel-example-generic {
+    width: 100vw;
     height: 550px;
-    position: relative;
-    z-index: -1;
 }
+
+.carousel-caption {
+    position: relative;
+}
+
+#mainphoto1 {
+    width: 100vw;
+    height: 550px;
+}
+
+/*#mainphoto1 {*/
+/*    background-image: url("../images/suit.jpg");*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: 100vw 550px;*/
+/*    height: 550px;*/
+/*    position: relative;*/
+/*    z-index: -1;*/
+/*}*/
 
 .insidephoto1 {
     position: absolute;
