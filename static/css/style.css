@@ -57,33 +57,22 @@ main {
     height: 550px;
 }
 
-/*#mainphoto1 {*/
-/*    background-image: url("../images/suit.jpg");*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: 100vw 550px;*/
-/*    height: 550px;*/
-/*    position: relative;*/
-/*    z-index: -1;*/
-/*}*/
-
-.insidephoto1 {
+.insidephoto {
     position: absolute;
-    left: 12%;
-    top: 20%;
     font-size: 40px;
     width: 180px;
     color: white;
     letter-spacing: 3px;
 }
 
-.insidephoto2 {
-    position: absolute;
+.photo1 {
+    left: 12%;
+    top: 20%;
+}
+
+.photo2 {
     left: 80%;
     top: 50%;
-    font-size: 40px;
-    width: 180px;
-    color: white;
-    letter-spacing: 3px;
 }
 
 #mainphoto2 {
@@ -95,34 +84,19 @@ main {
     z-index: -1;
 }
 
-.insidephoto3 {
-    position: absolute;
+.photo7 {
     left: 25%;
     top: 20%;
-    font-size: 40px;
-    width: 180px;
-    color: white;
-    letter-spacing: 3px;
 }
 
-.insidephoto4 {
-    position: absolute;
+.photo8 {
     left: 57%;
     top: 10%;
-    font-size: 40px;
-    width: 180px;
-    color: white;
-    letter-spacing: 3px;
 }
 
-.insidephoto5 {
-    position: absolute;
+.photo9 {
     left: 80%;
     top: 50%;
-    font-size: 40px;
-    width: 180px;
-    color: white;
-    letter-spacing: 3px;
 }
 
 .guarantees {
