@@ -43,19 +43,32 @@ main {
     margin-top: 108px;
 }
 
+/*carousel-----------------------------*/
+
 #carousel-example-generic {
     width: 100vw;
     height: 550px;
 }
 
-.carousel-caption {
-    position: relative;
-}
+/*one class does not work for the below needed ids*/
 
-#mainphoto1 {
+#carouselphoto1 {
     width: 100vw;
     height: 550px;
 }
+
+#carouselphoto2 {
+    width: 100vw;
+    height: 550px;
+}
+
+#carouselphoto3 {
+    width: 100vw;
+    height: 550px;
+}
+
+/*carousel specific ends-----------------------------*/
+
 
 .insidephoto {
     position: absolute;
@@ -74,6 +87,27 @@ main {
     left: 80%;
     top: 50%;
 }
+
+.photo3 {
+    left: 15%;
+    top: 20%;
+}
+
+.photo4 {
+    left: 75%;
+    top: 65%;
+}
+
+.photo5 {
+    left: 25%;
+    top: 15%;
+}
+
+.photo6 {
+    left: 75%;
+    top: 50%;
+}
+
 
 #mainphoto2 {
     background-image: url("../images/rol.jpg");
