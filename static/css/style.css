@@ -215,7 +215,7 @@ a:active, a:link, a:visited, a:hover {
     padding-bottom: 7px;
 }
 
-.paddingpaybutton {
+#paddingpaybutton {
     margin-top: 10px;
     margin-bottom: 50px;
     padding-left: 0;
