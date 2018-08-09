@@ -7,13 +7,21 @@ This Web App was built as a final project for the Code Institute's classroom boo
 
 **Follow this link to view deployed version of the web app https://miguel-django-project.herokuapp.com/**
 
-## Built with 
-1. Django framework
-2. Python
-2. HTML
-3. CSS
-4. Bootstrap
-5. SQLite database
+## Tech Used
+
+### Some the tech used includes:
+- **HTML**, **CSS** and **Javascript**
+  - Base languages used to create website
+- [Django](https://www.djangoproject.com/)
+    - We use **Django** to handle page routing and to build custom directives
+- [Bootstrap](http://getbootstrap.com/)
+    - We use **Bootstrap** to give our project a simple, responsive layout
+- [Hover.css](http://ianlunn.github.io/Hover/)
+    - use hover.css to obtain the underline in the navbar links
+- [Google Fonts](https://fonts.google.com/)
+    - use of google font "Luckiest Guy"
+- [Font Awsome](https://fontawesome.com/)
+    - Font Awsome has been used for the icons in all the pages
 
 ## URL's
 
