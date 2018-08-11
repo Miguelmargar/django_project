@@ -51,7 +51,7 @@ main {
     height: 550px;
 }
 
-/*one class does not work for the below needed ids*/
+/*one class does not work for the 3 ids below - needed ids instead*/
 
 #carouselphoto1 {
     width: 100vw;
@@ -113,7 +113,7 @@ main {
 #mainphoto2 {
     background-image: url("../images/rol.jpg");
     background-repeat: no-repeat;
-    background-size: 100vw 700px;
+    background-size: 100% 700px;
     height: 700px;
     position: relative;
     z-index: -1;
@@ -142,6 +142,12 @@ main {
     width: 100%;
     height: 100%;
     background-color: #f2f2f2;
+}
+
+@media (max-width: 425px) {
+    .insidephoto {
+        display: none;
+    }
 }
 
 /*Footer section------------------------------*/
