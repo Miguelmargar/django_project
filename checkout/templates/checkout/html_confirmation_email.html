@@ -5,16 +5,19 @@ Your username, in case you've forgotten: {{ user.username }}
 
 <div class="container">
     <div class="row">
-        {% for p in cart %}
-        <div class="col-sm-6">
-            <h5><span class="boldtext">Product Name:</span> {{ p.product.name }} </h5>
-            <p><span class="boldtext">Product description:</span> {{ p.product.description }} </p>
-            <img src="{{MEDIA_URL}}{{p.product.image}}">
-            <p><span class="boldtext">Product price:</span> {{ p.product.price }} </p>
-            <p><span class="boldtext">Product brand:</span> {{ p.product.brand }} </p>
-            <p><span class="boldtext">Amount in Cart:</span> {{ p.quantity }} </p>
-            <p><span class="boldtext">Total Product:</span> {{ p.sub_total }} </p>
-            <form method="POST" action="{% url 'remove_from_cart' %}">
+        {% for p in shortlist %}
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center">
+            <img class="watch_img" src="{{MEDIA_URL}}{{p.product.image}}" />
+            <div class="details">
+                <h2>Collection: {{ p.product.collection }}</h2>
+                <p>{{ p.product.name }}</p>
+                <p>Case: {{ p.product.case }}</p>
+                <p>Glass: {{ p.product.glass }}</p>
+                <p>Functions: {{ p.product.functions }}</p>
+                <p>Strap: {{ p.product.strap }}</p>
+                <h3>€{{ p.product.price }}</h3>
+            </div>
+            <form method="POST" action="{% url 'remove_from_shortlist' %}">
                 {% csrf_token %}
                 <input type="hidden" name="product_id" value="{{ p.product.id }}" />
                 <input type="submit" value="Remove" class="btn btn-success" />
