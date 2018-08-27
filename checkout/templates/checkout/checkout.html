@@ -75,71 +75,11 @@
         <div class="row text-center">
             <div class="form-group col-md-6">
                 <!--Order Form-------------------------------------------------------------------->
-                {{ order_form.non_field_errors }}
-                <div class="fieldWrapper">
-                    {{ order_form.full_name.errors }}
-                    <label for="{{ order_form.full_name.id_for_label }}">Full Name:</label>
-                    <p>{{ order_form.full_name }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ order_form.phone_number.errors }}
-                    <label for="{{ order_form.phone_number.id_for_label }}">Phone Number:</label>
-                    <p>{{ order_form.phone_number }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ order_form.street_address_1.errors }}
-                    <label for="{{ order_form.street_address_1.id_for_label }}">Street Address 1:</label>
-                    <p>{{ order_form.street_address_1 }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ order_form.street_address_2.errors }}
-                    <label for="{{ order_form.street_address_2.id_for_label }}">Street Address 2:</label>
-                    <p>{{ order_form.street_address_2 }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ order_form.town_or_city.errors }}
-                    <label for="{{ order_form.town_or_city.id_for_label }}">Town or City:</label>
-                    <p>{{ order_form.town_or_city }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ order_form.county.errors }}
-                    <label for="{{ order_form.county.id_for_label }}">County:</label>
-                    <p>{{ order_form.county }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ order_form.postcode.errors }}
-                    <label for="{{ order_form.postcode.id_for_label }}">Postcode:</label>
-                    <p>{{ order_form.postcode }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ order_form.country.errors }}
-                    <label for="{{ order_form.country.id_for_label }}">Country:</label>
-                    <p>{{ order_form.country }}</p>
-                </div>
+                {{ order_form|as_bootstrap }}
             </div>
             <!-- Payment form----------------------------------------------------------------------->
             <div class="form-group col-md-6">
-                {{ payment_form.non_field_errors }}
-                <div class="fieldWrapper">
-                    {{ payment_form.credit_card_number.errors }}
-                    <label for="{{ payment_form.credit_card_number.id_for_label }}">Credit Card Number:</label>
-                    <p>{{ payment_form.credit_card_number }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ payment_form.cvv.errors }}
-                    <label for="{{ payment_form.cvv.id_for_label }}">CVV Number:</label>
-                    <p>{{ payment_form.cvv }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ payment_form.expiry_month.errors }}
-                    <label for="{{ payment_form.expiry_month.id_for_label }}">Expiry Month:</label>
-                    <p>{{ payment_form.expiry_month }}</p>
-                </div>
-                <div class="fieldWrapper">
-                    {{ payment_form.expiry_year.errors }}
-                    <label for="{{ payment_form.expiry_year.id_for_label }}">Expiry Year:</label>
-                    <p>{{ payment_form.expiry_year }}</p>
-                </div>
+                {{ payment_form|as_bootstrap }}
             </div>
         </div>
 

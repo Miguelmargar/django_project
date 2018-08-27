@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse, redirect
 from products.models import Product
-from .utils import get_cart_items_and_total
+from .utils import get_shortlist_items_and_total
 # Create your views here.
 
 def view_shortlist(request):
     shortlist = request.session.get("shortlist", {})
-    context = get_cart_items_and_total(shortlist)
+    context = get_shortlist_items_and_total(shortlist)
         
     return render(request, "shortlist/viewshortlist.html", context)
 

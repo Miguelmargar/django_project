@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 from decimal import Decimal
 
-def get_cart_items_and_total(shortlist):    
+def get_shortlist_items_and_total(shortlist):    
     shortlist_total = 0
     shortlist_items = []
     for p in shortlist:

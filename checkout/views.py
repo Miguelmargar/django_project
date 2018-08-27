@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .forms import OrderForm, MakePaymentForm
 from products.models import Product
 from decimal import Decimal
-from shortlist.utils import get_cart_items_and_total
+from shortlist.utils import get_shortlist_items_and_total
 from django.utils import timezone
 from .models import OrderLineItem
 from django.contrib import messages
@@ -24,7 +24,7 @@ def checkout(request):
             shortlist = request.session.get('shortlist', {})
             save_order_items(order, shortlist)
         
-            items_and_total = get_cart_items_and_total(shortlist)
+            items_and_total = get_shortlist_items_and_total(shortlist)
             total = items_and_total['shortlist_total']
             stripe_token=payment_form.cleaned_data['stripe_id']
 
@@ -45,7 +45,7 @@ def checkout(request):
         payment_form = MakePaymentForm()
         context = {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE }
         shortlist = request.session.get('shortlist', {})
-        shortlist_items_and_total = get_cart_items_and_total(shortlist)
+        shortlist_items_and_total = get_shortlist_items_and_total(shortlist)
         context.update(shortlist_items_and_total)
     
     return render(request, "checkout/checkout.html", context)
